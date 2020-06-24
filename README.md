@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3906507.svg)](https://doi.org/10.5281/zenodo.3906507)
+
 ## Segmentation of HALO flights during EUREC4A
 
 The HALO Research Flights (RFs) during EUREC4A can be divided into different segments. 
@@ -13,7 +15,7 @@ general information about the RF or special events during the RF.
 A flight segment is a period of some constant characteristics during a RF. For example during a 
 circle segment, the roll angle and the temporal change in aircraft heading can be assumed to roughly be
 constant. The circles during EUREC4A were especially associated with the regular launch of 
-dropsondes, most of the time 12 per circle, every 30 ° heading. Such general characteristics 
+dropsondes, most of the time 12 per circle, every 30 Â° heading. Such general characteristics 
 of the various flight segments and a first idea about the flight patterns from the flight
 reports (available on [aeris](https://observations.ipsl.fr/aeris/eurec4a/#/)) are used as a starting point
 to approach the flight phase segmentation. The BAHAMAS datasets and the dropsonde launch 
@@ -41,7 +43,7 @@ are noted below each flight segment.
 
 #### circle:
 - Starts 1 minute prior to the first dropsonde of a circle to improve comparability of dropsonde and 
-remote sensing data. Ends after 360° when aircraft passes starting point, assuring there is no overlap.
+remote sensing data. Ends after 360Â° when aircraft passes starting point, assuring there is no overlap.
 - If there is a BAD dropsonde at the circle start, it is still considered for defining the circle start. 
 
 #### circle_break: 
@@ -52,44 +54,44 @@ is assured that the aircraft remained on the circle track.
 of dropsonde data.
 
 #### circling:
-- Period during which the aircraft was on the standard circling track with roughly 3° roll angle.
+- Period during which the aircraft was on the standard circling track with roughly 3Â° roll angle.
 - Periods without dropsonde launches are included here (e.g. circle_break).
 - Useful when wanting to loop over the full period HALO was on the circle track.
 
 #### clover_leg:
-- Defined as the long legs of a clover flight pattern with close to 2° roll angle.
-- Dropsondes were launched every 30° along clover legs. 
-- The transitions between circle pattern and clover pattern are excluded, because of steep roll angles of about 30°. 
+- Defined as the long legs of a clover flight pattern with close to 2Â° roll angle.
+- Dropsondes were launched every 30Â° along clover legs. 
+- The transitions between circle pattern and clover pattern are excluded, because of steep roll angles of about 30Â°. 
 - Clover legs are not defined via launch times of first and last dropsonde, because they don't always represent the 
 whole leg.
 
 #### clover_turn:
-- Periods between two consecutive clover legs (smooth transition), with steeper roll angles of about 6°.
-- These periods are constrained to the periods during the clover pattern where the aircraft roll angle deviates clearly from 2°.
+- Periods between two consecutive clover legs (smooth transition), with steeper roll angles of about 6Â°.
+- These periods are constrained to the periods during the clover pattern where the aircraft roll angle deviates clearly from 2Â°.
 - During these turns no dropsondes were launched. 
 
 #### straight_leg:
-- Period with constant aircraft heading and close to 0° roll angle (max. 3° roll for short periods).
+- Period with constant aircraft heading and close to 0Â° roll angle (max. 3Â° roll for short periods).
 - Straight legs were flown with various purposes, which are more closely described by the straight leg 
 "name"-Parameter in the YAML files and is in some cases also expressed by additional entries in the segment "kinds" attribute.
 
 #### lidar_calibration:
 - Maneuver typically conducted during the final descent of most RFs in FL160.
 - Defined as the period of the aircraft being in FL160. 
-- If roll angle was close to 0° the whole time, the segment is also of kind "straight_leg".
+- If roll angle was close to 0Â° the whole time, the segment is also of kind "straight_leg".
 
 #### radar_calibration_wiggle:
-- Maneuver typically conducted during straight legs, where the aircraft tilts to a roll angle of first -20° and then +20°.
+- Maneuver typically conducted during straight legs, where the aircraft tilts to a roll angle of first -20Â° and then +20Â°.
 - If conducted during a straight leg, the straight leg is split into three flight segments: 
 1.) straight_leg, 2.) radar_cal_wiggle, 3.) straight_leg.
-- Segments start and end at about 0° roll angle.
+- Segments start and end at about 0Â° roll angle.
 
 #### radar_calibration_tilted:
-- Maneuver typically conducted at the end of a straight leg, where a narrow circle pattern with a constant 10° bank is flown.
-- A constant roll angle of about 10° is used to define the period of a "radar_cal_tilted" segment.
+- Maneuver typically conducted at the end of a straight leg, where a narrow circle pattern with a constant 10Â° bank is flown.
+- A constant roll angle of about 10Â° is used to define the period of a "radar_cal_tilted" segment.
 
 #### baccardi_calibration:
-- Defined by 4 turns indicated by roll angles of about 25° (1 turn: -25°, 3 turns: +25°).
+- Defined by 4 turns indicated by roll angles of about 25Â° (1 turn: -25Â°, 3 turns: +25Â°).
 
 
 **Note on data format**: The flight segmentation data is provided in so called YAML files. YAML is a text based
